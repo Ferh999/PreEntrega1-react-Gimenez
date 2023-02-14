@@ -1,13 +1,37 @@
+import { useEffect, useState } from "react";
+import { products } from "../../productsMock";
+import ItemList from "../ItemList/ItemList";
 
 
-const ItemListConteiner = (props) => {
+
+const ItemListConteiner = () => {
+
+    const [items , setItems] = useState([])
     
-    const {edad, usuario} = props
+    useEffect (()=>{
+        const task = new Promise((resolve, reject)=> {
+            setTimeout(()=> {
+                resolve(products)
+            }, 1000);
+            
+            // reject("error 404");
+        });
+
+        task
+            .then((res)=> {
+                setItems(res);
+            })
+            .catch((error) => {
+                console.log("aca se rechazo", error)
+            })
+    }, [])
+
+        console.log(items)
     return (
-    <div>
-        <h2>Hola {usuario}</h2>
-        <h3>{edad} años</h3>
-    </div>
+    <>
+        <ItemList items={items}/>
+        
+    </>
     )
 }
 
