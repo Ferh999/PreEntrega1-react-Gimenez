@@ -1,8 +1,8 @@
 .productCard {
     border: 2px solid black;
-    width: 500px;
+    width: 300px;
     border-radius: 5px;
-    height: 420px;
+    height: 400px;
     margin: 20px;
     padding: 10px;
 }

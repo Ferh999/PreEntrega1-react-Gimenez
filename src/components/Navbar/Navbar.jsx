@@ -1,5 +1,5 @@
 import ListNavbar from "../ListNavbar/ListNavbar"
-
+import { Link } from "react-router-dom"
 
 
 const Navbar = ()=> {
@@ -12,10 +12,18 @@ const Navbar = ()=> {
             fontSize:"25px",
             fontWeight:"100px"
         }}>
-            <ListNavbar title="Inicio"/>
-            <ListNavbar title="Productos"/>
-            <ListNavbar title="Servicios"/>
-            <ListNavbar title="Quienes Somos"/>
+            <Link to="/">
+                <ListNavbar title="Inicio"/>
+            </Link>
+            <Link to="/category/mandos">
+                <ListNavbar title="In"/>
+            </Link>
+            <Link to="/category/audiovisual">
+                <ListNavbar title="Out"/>
+            </Link>
+            <Link>
+                <ListNavbar title="Quienes Somos"/>
+            </Link>
         </ul>
     )
 }

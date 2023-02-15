@@ -14,7 +14,7 @@ const ItemList = ({ items }) => {
         }}>
             {
                 items.map((element) => {
-                    return <ProductCard element={element}/>
+                    return <ProductCard element={element} key={element.id}/>
                 })
             };
         </div>
