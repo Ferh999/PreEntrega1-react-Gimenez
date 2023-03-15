@@ -2,11 +2,12 @@ import { Link } from "react-router-dom"
 import CartWidget from "../CartWidget/CartWidget"
 import Navbar from "../Navbar/Navbar"
 
+import "./Header.css"
 
 
 const Header = () => {
     return (
-        <div style={{ display: "flex", width: "100%", height: "20vh", justifyContent: "space-between", alignItems: "center", backgroundColor: "steelblue" }}>
+        <div className="header-stile">
             <Link to="/">
             <h2>PeriFeria</h2>
             </Link>

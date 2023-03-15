@@ -9,7 +9,6 @@ const ItemList = ({ items }) => {
             alignItems: "center",
             width: "100%",
             height: "70vh",
-            backgroundColor: "grey",
 
         }}>
             {

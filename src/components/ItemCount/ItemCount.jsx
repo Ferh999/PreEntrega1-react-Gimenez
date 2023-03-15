@@ -1,31 +1,34 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react';
 
-const ItemCount = () => {
+const ItemCount = ({ stock, initial=1, onAdd }) => {
 
-    const [ contador, setContador ] = useState(0)
-    const [ mostrar, setMostrar ] = useState(false)
+    const [ contador, setContador ] = useState(initial);
+
+    useEffect(()=> {
+        setContador(initial)
+    },[initial])
 
     const sumar =() => {
-        setContador(contador + 1)
+        if (contador < stock) {
+            setContador(contador + 1)
+        }
+    };
 
-    }
-    const cambiarEstado = () => {
-        setMostrar( !mostrar )
-    }
-    console.log(mostrar)
+    const restar = () => {
+        if (contador > 1) {
+            setContador(contador -1);
+        }
+    };
 
     return (
     <div>
-        <h1 className={ mostrar ? "title-true" : "title-false"}>El contador esta en {contador}</h1>
+        <h1>{contador}</h1>
+
         <button onClick={sumar}>sumar</button>
-        <button onClick={cambiarEstado}>
-            {
-                mostrar ? "ocultar" : "Descripcion"
-            }
+        <button onClick={restar}>restar</button>
+        <button onClick={()=> onAdd(contador)}>
+            Agregar Al Carrito
         </button>
-        {
-            mostrar === true ? <h2>acá se muestra la descripcion</h2> : null
-        }
     </div>
     )
 }

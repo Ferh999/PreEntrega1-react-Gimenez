@@ -1,0 +1,35 @@
+.list-nav {
+    display: flex;
+    justify-content:space-evenly;
+    text-decoration: none;
+    align-items: center;
+    width: 600px;
+    font-size : 25px;
+    font-weight:100px;
+    list-style: none;
+    cursor: pointer;
+    
+}
+
+
+.category {
+    list-style: none;
+    font-weight: bold;
+    color: aliceblue;
+    
+
+}
+
+.active-category {
+    list-style: none;
+    font-weight: bold;
+    border: solid 1px rgb(187, 187, 220);
+    border-radius: 30px;
+    padding: 10px;
+    width: 95px;
+    align-content: center;
+    background-color: rgb(56, 63, 63);
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+}

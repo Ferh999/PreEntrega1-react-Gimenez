@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { products } from "../../productsMock";
 import ItemList from "../ItemList/ItemList";
-
-
+import "./ItemListConteiner.css"
 
 const ItemListConteiner = () => {
 
@@ -36,7 +35,10 @@ const ItemListConteiner = () => {
         console.log(items)
     return (
     <>
-        <ItemList items={items}/>
+    <div className="banner">
+    <ItemList items={items}/>
+    </div>
+        
         
     </>
     )
