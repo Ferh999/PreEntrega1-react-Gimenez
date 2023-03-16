@@ -14,9 +14,6 @@ const Navbar = ()=> {
             <NavLink to="/category/audiovisual" className={({ isActive })=> isActive ? "active-category" : "category"}>
                 <ListNavbar title="OUT"/>
             </NavLink>
-            <NavLink to="/" className={({ isActive })=> isActive ? "active-category" : "category"}>
-                <ListNavbar title="Nosotros"/>
-            </NavLink>
         </ul>
     )
 }

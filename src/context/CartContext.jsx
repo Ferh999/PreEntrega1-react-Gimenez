@@ -32,6 +32,7 @@ const CartContextProvider = ({children}) => {
         setCart([])
     }
 
+
     const deleteProductById = (id) => {
         let newCart =cart.filter(product => product.id !== id)
         setCart (newCart)
@@ -49,12 +50,29 @@ const CartContextProvider = ({children}) => {
         return product?.quantity
     }
 
+    const getTotalItems = ()=>{
+        const total = cart.reduce((acc, element)=>{
+            return acc + element.quantity
+        }, 0)
+        return total
+    }
+
+    const getTotalPrice = ()=>{
+        const total = cart.reduce((acc, element)=>{
+            return acc + (element.price * element.quantity)
+        }, 0)
+
+        return total
+    }
     let data ={
         cart,
         addToCart,
         clearCart,
         deleteProductById,
-        getQuantityById
+        getQuantityById, 
+        getTotalItems,
+        getTotalPrice,
+        
     }
     return (
     < CartContext.Provider value={ data }>

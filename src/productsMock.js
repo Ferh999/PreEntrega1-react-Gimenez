@@ -2,7 +2,7 @@
 export const products = [
     {
         id: 1,
-        title: "Teclados mecanicos",
+        title: "Teclados Mecanicos",
         price: 26500,
         stock: 16,
         description: "Este teclado de alto rendimiento permite que puedas disfrutar de horas ilimitadas de juegos. Podrás mejorar tu experiencia de gaming, ya seas un aficionado o todo un experto y hacer que tus jugadas alcancen otro nivel.",
@@ -29,11 +29,11 @@ export const products = [
     },
     {
         id: 4,
-        title: "mandos",
+        title: "Joysticks",
         price: 5500,
         stock: 24,
         description: "Este mando combina funciones revolucionarias mientras conserva precisión, comodidad y exactitud en cada movimiento. Gracias a su ergonomía especialmente pensada para la posición de tu mano, podés pasar horas jugando con total confort",
-        category: "joysticks",
+        category: "mandos",
         img:"https://gamerstyle.com.mx/wp-content/uploads/2022/04/PS4-control.jpg"
     },
     {

@@ -1,0 +1,26 @@
+.product-cart {
+    display: grid;
+    grid-column: (4, 1fr);
+    justify-content: center;
+    align-content:space-between;
+    align-items: flex-start;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/fotos-premium/controlador-videojuegos-negro-sobre-fondo-amarillo-brillante_601748-2879.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    background-position-y: 70%;
+}
+
+.product-cart img {
+    border-radius: 10px;
+    width: 350px;
+    height: 250px;
+    margin: 20px 0 0 30px;
+}
+
+.product-cart h3 {
+    font-size: larger;
+    font-weight: bold;
+}
+
