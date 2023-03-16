@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { products } from "../../productsMock";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListConteiner.css"
 import { MoonLoader } from "react-spinners";
+import { db } from "../../firebaseConfig"
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 const style = {
     display: "block",
@@ -14,32 +15,53 @@ const style = {
 const ItemListConteiner = () => {
 
     const {categoryName}= useParams()
-    console.log(categoryName)
+
 
     const [items , setItems] = useState([])
     
     useEffect (()=>{
 
-        const productsFiltered = products.filter( (product)=> product.category === categoryName )
+        const itemCollection = collection( db , "products" )
 
-        const task = new Promise((resolve, reject)=> {
-            setTimeout(()=> {
-                resolve( categoryName ? productsFiltered : products)
-            }, 1500);
+        if (categoryName) {
             
-            // reject("error 404");
-        });
+            const q = query( itemCollection, where("category", "==", categoryName))
 
-        task
-            .then((res)=> {
-                setItems(res);
+            getDocs (q)
+            .then( (res)=> {
+                const products = res.docs.map( product => {
+                    return {
+                        ...product.data(),
+                        id: product.id
+                    }
+                })
+    
+                setItems( products )
+    
             })
-            .catch((error) => {
-                console.log("aca se rechazo", error)
+            .catch((err)=> console.log("error: " + err))
+        
+
+        }else{
+            getDocs (itemCollection)
+            .then( (res)=> {
+                const products = res.docs.map( product => {
+                    return {
+                        ...product.data(),
+                        id: product.id
+                    }
+                })
+    
+                setItems( products )
+    
             })
+            .catch((err)=> console.log("error: " + err))
+        }
+
     }, [categoryName])
 
-        console.log(items)
+
+
     return (
 
         

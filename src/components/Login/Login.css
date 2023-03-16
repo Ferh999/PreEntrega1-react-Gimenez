@@ -1,0 +1,10 @@
+.btn-login {
+    border: solid 3px rgb(95, 95, 194);
+    border-radius: 6px;
+    background-color: rgb(95, 95, 194);
+    color: white;
+    font-size: large;
+    margin: 12px;
+    padding: 5px;
+    cursor: pointer;
+}

@@ -2,7 +2,7 @@
 export const products = [
     {
         id: 1,
-        title: "Teclados Mecanicos",
+        title: "Teclado Mecanico",
         price: 26500,
         stock: 16,
         description: "Este teclado de alto rendimiento permite que puedas disfrutar de horas ilimitadas de juegos. Podrás mejorar tu experiencia de gaming, ya seas un aficionado o todo un experto y hacer que tus jugadas alcancen otro nivel.",

@@ -1,16 +1,23 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { CartContext } from "../../context/CartContext"
 import Swal from 'sweetalert2'
 import emptyCart from "../../assets/Images/emptyCart.svg"
 import "./Cart.css"
+import { Button } from "@mui/material"
+import FormCheckout from "../FormCheckOut/FormCheckOut"
+import { Link } from "react-router-dom"
 
 const Cart = () => {
 
   const { cart, clearCart, deleteProductById, getTotalPrice } = useContext ( CartContext )
 
-console.log (cart)
+const [buy, setBuy] = useState(false)
+const [orderId, setOrderId] = useState(null);
+
 
   const clearCartAlert =()=> {
+    
+
 
     Swal.fire({
       title: 'Esta seguro de Vaciar el Carrito?',
@@ -35,16 +42,30 @@ console.log (cart)
 }
 
 
+if( orderId ){
+  return  <div>
+              <h1>El Id de tu compra es:{orderId}</h1>
+              <Link to="/" >Seguir Comprando</Link>
+          </div>
+  }
+
+
 if (cart.length < 1){
 return  <>
 <img src={emptyCart} alt="" className="empty-cart"/>
-<h3 className="vacio">Carrito Vacio</h3>
+<h3 className="vacio">Carrito Vacio :( </h3>
 </>
 
 }
 
+
+
+
   return (
-    <div>
+
+  <div>
+    {
+      !buy ? (<div>
     
       {
         cart.map( item => {
@@ -60,14 +81,25 @@ return  <>
           )
         })
       }
+
+    
       <div className="botones-cart">
-      <button variant="contained">Comprar</button>
-      <button onClick={()=> clearCartAlert()}  variant="contained">Vaciar Carrito</button>
+      <Button variant="contained" onClick={()=> setBuy(true)}>CheckOut</Button>
+      <Button onClick={()=> clearCartAlert()}  variant="contained">Vaciar Carrito</Button>
       </div>
-      
+    
       <h2>Total de la Compra es ${getTotalPrice()}</h2>
-    </div>
-  )
-}
+    </div>) : (
+    <FormCheckout cart={cart} total={getTotalPrice()} clearCart={clearCart} setOrderId={setOrderId}/>
+    
+    )}
+    
+    
+    
+    
+  </div>
+    
+  );
+};
 
 export default Cart
