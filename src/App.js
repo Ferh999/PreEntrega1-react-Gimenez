@@ -1,9 +1,9 @@
 
 
 import Header from "./components/Header/Header";
-//import ItemCount from "./components/ItemCount/ItemCount";
+
 import ItemListConteiner from "./components/ItemListConteiner/ItemListConteiner";
-//import Layout from "./components/Layout/Layout";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetailConteiner from "./components/ItemDetailConteiner/ItemDetailConteiner";
 import Cart from "./components/Cart/Cart";

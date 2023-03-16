@@ -61,3 +61,15 @@ box-shadow: 24px 14px 46px 8px rgba(0,0,0,0.75);
     font-size: 35px;
     font-weight: bold;
 }
+
+.btn-retorno {
+    border: solid 3px rgb(95, 95, 194);
+    border-radius: 14px;
+    background-color: rgb(95, 95, 194);
+    color: white;
+    font-size: large;
+    margin: 12px;
+    padding: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}

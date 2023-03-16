@@ -1,5 +1,5 @@
 import ListNavbar from "../ListNavbar/ListNavbar"
-import { Link, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import "./Navbar.css"
 
 const Navbar = ()=> {

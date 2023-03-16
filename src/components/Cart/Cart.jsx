@@ -45,7 +45,7 @@ const [orderId, setOrderId] = useState(null);
 if( orderId ){
   return  <div>
               <h1>El Id de tu compra es:{orderId}</h1>
-              <Link to="/" >Seguir Comprando</Link>
+              <Link to="/" className="btn-retorno">Seguir Comprando</Link>
           </div>
   }
 

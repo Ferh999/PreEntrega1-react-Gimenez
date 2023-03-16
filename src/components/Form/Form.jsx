@@ -2,19 +2,17 @@ import React, { useState } from 'react'
 
 const Form = () => {
 
-//const [usuario, setUsuario] = useState ("");
-//const [email, setEmail] = useState ("");
+
 
 const [ userData, setUserData ] = useState ({ name: "", email: ""})
 
 const cancel = () => {
-    console.log ("solicitud cancelada")
+
 
 }
 const handleSubmit = (event) => {
     event.preventDefault();
-    console.log (userData)
-
+    
 };
 
 

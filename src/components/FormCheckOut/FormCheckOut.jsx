@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { serverTimestamp, addDoc, collection, updateDoc, doc } from "firebase/firestore"
 import { db } from '../../firebaseConfig'
 import Cart from '../Cart/Cart'
+import "./FormCheckOut.css"
 
 const FormCheckout = ({cart, total, clearCart, setOrderId}) => {
 
@@ -36,12 +37,12 @@ const handleSubmit =(e) => {
     <div>
         <form onSubmit={handleSubmit}>
         <input type="text" placeholder="ingrese su Nombre" name="name" 
-            onChange={ (e) => setUserInfo({...userInfo, name:e.target.value})}/>
+            onChange={ (e) => setUserInfo({...userInfo, name:e.target.value})} className='check-out'/>
             <input type="text" placeholder="ingrese su email" name="email" 
-            onChange={ (e) => setUserInfo({...userInfo, email:e.target.value})}/>
+            onChange={ (e) => setUserInfo({...userInfo, email:e.target.value})} className='check-out'/>
             <input type="text" placeholder='ingrese su telefono' name="phone" 
-            onChange={ (e) => setUserInfo({...userInfo, phone:e.target.value})}/>
-            <button>Comprar</button>
+            onChange={ (e) => setUserInfo({...userInfo, phone:e.target.value})} className='check-out'/>
+            <button className='btn-comprar'>Comprar</button>
         </form>
     </div>
     )

@@ -1,7 +1,6 @@
 .list-nav {
     display: flex;
     justify-content:space-evenly;
-    text-decoration: none;
     align-items: center;
     width: 600px;
     font-size : 25px;
@@ -10,7 +9,6 @@
     cursor: pointer;
     
 }
-
 
 .category {
     list-style: none;
